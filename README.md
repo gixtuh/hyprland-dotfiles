@@ -30,6 +30,20 @@ Super+E for Dolphin
 
 Super+M to exit Hyprland
 
+Super+C to close the active window
+
+Super+J to split windows
+
+Super+L to lock Hyprland/run Hyprlock
+
+Super+F1 to decrease volume
+
+Super+F2 to increase volume
+
+F11 to put anything on fullscreen
+
+Super+Escape to open the Xfce4 System Monitor
+
 Print to print screen
 
 ## Installing tutorial
