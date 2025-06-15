@@ -2,6 +2,17 @@
 
 **These dotfiles are still uploading so expect bugs.**
 
+## Installing tutorial
+
+Enter these commands to install gixtuh dotfiles:
+```bash
+git clone https://www.github.com/gixtuh/hyprland-dotfiles
+cd hyprland-dotfiles
+sudo chmod +x ./install.sh
+./install.sh
+```
+If you are experiencing problems, please create an issue.
+
 ## Screenshots
 ![Screenshot](https://github.com/user-attachments/assets/f81e59e3-e88a-44d7-b62e-76e5eb0830e3)
 
@@ -47,17 +58,6 @@ F11 to put anything on fullscreen
 Super+Escape to open the system monitor
 
 Print to print screen
-
-## Installing tutorial
-
-Enter these commands to install gixtuh dotfiles:
-```bash
-git clone https://www.github.com/gixtuh/hyprland-dotfiles
-cd hyprland-dotfiles
-sudo chmod +x ./install.sh
-./install.sh
-```
-If you are experiencing problems, please create an issue.
 
 ## Dependencies
 
