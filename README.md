@@ -56,3 +56,29 @@ sudo chmod +x ./install.sh
 ./install.sh
 ```
 If you are experiencing problems, please create an issue.
+
+## Dependencies
+
+cava for the music visualizer
+
+fastfetch for the system information displayer
+
+waybar for the status bar
+
+hyprland for the window manager itself
+
+hyprlock for the lock screen
+
+kitty for the terminal
+
+swww for the wallpaper
+
+python-pywal for the color scheme generator
+
+btop for the CLI task manager
+
+dolphin for the file explorer
+
+pamixer for the volume changer
+
+xfce4-taskmanager for the graphical task manager.
