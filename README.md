@@ -13,13 +13,14 @@ cd hyprland-dotfiles
 If you are experiencing problems, please create an issue.
 
 ## Screenshots
-![Screenshot](https://github.com/user-attachments/assets/f81e59e3-e88a-44d7-b62e-76e5eb0830e3)
 
-![Screenshot](https://github.com/user-attachments/assets/c395bf1a-4ffc-4af6-a3ba-a74496178804)
+![Screenshot](https://github.com/user-attachments/assets/20be3df6-0512-46d0-9960-cf5ccde22978)
 
-![Screenshot](https://github.com/user-attachments/assets/64f99e82-c8f7-4f20-b103-814296d91f6f)
+![Screenshot](https://github.com/user-attachments/assets/91b5fb00-2a39-40cd-93a6-cc9e5beaba0d)
 
-![Screenshot](https://github.com/user-attachments/assets/91808974-0680-40a5-8fb6-008c398595e0)
+![Screenshot](https://github.com/user-attachments/assets/9e8dd747-5d1d-4dee-905e-885a80bd6af7)
+
+![Screenshot](https://github.com/user-attachments/assets/f8bcb505-1f4e-40b4-a75b-1fc9655f4312)
 
 Only Arch Linux is supported. ![Screenshot](https://github.com/user-attachments/assets/05aeac22-145c-49d1-a03b-0ac6dd6b6f6e)
 
