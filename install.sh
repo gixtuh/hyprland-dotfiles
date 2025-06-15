@@ -72,6 +72,7 @@ case "$COPY" in
         echo "copying waybar dotfiles..."
         rm -rf ~/.config/waybar
         cp -r ./config/waybar ~/.config/waybar
+        sudo chmod +x ~/.config/waybar/wifi_ssid.sh
         sleep 1
         echo "copied"
 
