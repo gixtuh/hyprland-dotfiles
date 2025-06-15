@@ -67,6 +67,7 @@ case "$COPY" in
                 sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv > /dev/null
                 case "$YAY" in
                     y|yes|"")
+                        clear
                         echo "stage 3: installing yay dependencies..."
                         yay -S google-chrome --noconfirm > /dev/null
                     ;;
@@ -126,6 +127,8 @@ case "$COPY" in
                 sleep 2
             ;;
         esac
+
+        clear
 
         case "$BASHRC" in
             y|yes|"")
