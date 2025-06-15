@@ -1,0 +1,47 @@
+{
+  "layer": "top",
+  "position": "top",
+
+  "modules-left": ["custom/rofi", "cava"],
+  "modules-center": ["clock", "custom/date"],
+  "modules-right": ["custom/wifi", "battery", "pulseaudio", "tray"],
+
+  "clock": {
+    "format": "{:%H:%M:%S}",
+    "tooltip-format": "{:%A, %B %d, %Y}",
+    "interval": 1
+  },
+
+  "custom/wifi": {
+    "exec": "~/.config/waybar/wifi_ssid.sh",
+    "interval": 10,
+    "return-type": "json"
+  },
+  "battery": {
+    "format": "{capacity}% ",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "interval": 30
+  },
+
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": " muted"
+  },
+   "cava": {
+    "cava_config":"~/.config/cava/config"
+   },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8
+  },
+  "custom/rofi": {
+    "format":"\uf303",
+    "on-click": "rofi -show drun"
+  },
+
+  "workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true
+  }
+}

@@ -1,0 +1,71 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+    // Use the Arch Linux logo
+    "logo": {
+        "type": "auto",
+        "padding": {
+            "right": 2
+        }
+    },
+
+    // Define what modules to show
+    "modules": [
+        {
+            "type": "title",
+            "key": " "
+        },
+        {
+            "type": "separator",
+            "string": "╭╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ System ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮",
+            "length":1
+        },
+        {
+            "type":"terminal",
+            "key":"   Terminal"
+        },
+        {
+            "type": "os",
+            "key": "   Operating System"
+        },
+        {
+            "type": "uptime",
+            "key": "   Uptime"
+        },
+        {
+            "type": "shell",
+            "key": "   Shell"
+        },
+        {
+            "type": "wm",
+            "key": "   WM"
+        },
+        {
+            "type": "separator",
+            "string": "╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ System ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╯",
+            "length":1
+        },
+        {
+            "type": "separator",
+            "string": "╭╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ Motherboard ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮",
+            "length":1
+        },
+        {
+            "type":"host",
+            "key":"   Motherboard"
+        },
+        {
+            "type": "cpu",
+            "key": "   CPU"
+        },
+        {
+            "type": "gpu",
+            "key": "   GPU"
+        },
+        {
+            "type": "separator",
+            "string": "╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ Motherboard ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╯",
+            "length":1
+        }
+    ]
+}

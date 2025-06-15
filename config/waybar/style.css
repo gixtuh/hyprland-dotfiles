@@ -1,0 +1,55 @@
+@import url("file:///home/gixtuh/.cache/wal/colors-waybar.css");
+* {
+  background: transparent;
+  padding: 2px;
+}
+
+#waybar {
+  background: alpha(@color0, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+}
+
+#workspaces,
+#mode,
+#clock,
+tooltip {
+  background: alpha(@color12, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+}
+#cava {
+  background: alpha(@color12, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+}
+#custom-wifi {
+  background: alpha(@color12, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+}
+#battery,
+#pulseaudio,
+#custom-rofi {
+  background: alpha(@color12, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+}
+#tray {
+  background: alpha(@color12, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+}
+
