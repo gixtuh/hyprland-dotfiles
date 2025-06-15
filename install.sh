@@ -7,55 +7,65 @@
 #   \___  /|__/__/\_ \ |__| |____/|___|  / \____ |\____/|__|  |__|  |__|____/\___  >____  >
 #  /_____/          \/                 \/       \/                               \/     \/ 
 
-clear
-echo -e "gixtuh's hyprland dotfiles install wizard\n----------------------------------------------"
-echo "update system? (y/n)"
-read UPDATE
-clear
-echo -e "gixtuh's hyprland dotfiles install wizard\n----------------------------------------------"
-echo "install dependencies? (cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv) (y/n)"
-read DEPENDENCIES
-clear
-echo -e "gixtuh's hyprland dotfiles install wizard\n----------------------------------------------"
-echo "install yay dependencies? (google-chrome) (y/n)"
-read YAY
-clear
-echo -e "gixtuh's hyprland dotfiles install wizard\n----------------------------------------------"
-echo "copy dotfiles? (y/n)"
-read COPY
-clear
-echo -e "gixtuh's hyprland dotfiles install wizard\n----------------------------------------------"
-echo "replace bashrc? (y/n)"
-read BASHRC
-clear
-echo -e "gixtuh's hyprland dotfiles install wizard\n----------------------------------------------"
-echo "autostart waybar and swww? (y/n)"
-read AUTOSTART
-clear
 
-case "$UPDATE" in
-    y|yes|"")
-        sudo pacman -Syu --noconfirm
-    ;;
-esac
 
-clear
 
-case "$DEPENDENCIES" in
-    y|yes|"")
-        sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv
-        case "$YAY" in
-            y|yes|"")
-                yay -S google-chrome
-            ;;
-        esac
-    ;;
-esac
+if (whiptail --yesno "Do you want to update the system?" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
+    UPDATE=y
+else
+    UPDATE=n
+fi
+if (whiptail --yesno "Do you want to install the dependencies? (cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv)" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
+    DEPENDENCIES=y
+else
+    DEPENDENCIES=n
+fi
+if (whiptail --yesno "Do you want to install the yay dependencies? (google-chrome)" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
+    YAY=y
+else
+    YAY=n
+fi
+if (whiptail --yesno "Do you want to replace the .bashrc file?" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
+    BASHRC=y
+else
+    BASHRC=n
+fi
+if (whiptail --yesno "Do you want to restart waybar after installation?" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
+    AUTOSTART=y
+else
+    AUTOSTART=n
+fi
+if (whiptail --yesno "Are you sure you want to install gixtuh's Hyprland dotfiles? It will overwrite your current Hyprland, fastfetch, cava and waybar configs!" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
+    COPY=y
+else
+    COPY=n
+fi
 
 clear
 
 case "$COPY" in
     y|yes|"")
+        case "$UPDATE" in
+            y|yes|"")
+                sudo pacman -Syu --noconfirm
+            ;;
+        esac
+
+        clear
+
+        case "$DEPENDENCIES" in
+            y|yes|"")
+                sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv
+                case "$YAY" in
+                    y|yes|"")
+                        yay -S google-chrome --noconfirm
+                    ;;
+                esac
+            ;;
+        esac
+
+        clear
+
         echo "copying dotfiles in 5"; sleep 1; clear
         echo "copying dotfiles in 4"; sleep 1; clear
         echo "copying dotfiles in 3"; sleep 1; clear
@@ -96,7 +106,8 @@ case "$COPY" in
         sudo chmod +x /usr/local/bin/pipes.sh # sudo 
         sudo cp -r ./config/wallpaper.sh /usr/local/bin/wallpaper.sh # GOD IT'S ALL SUDO
         rm -rf ~/HyprlandRoot
-        cp -r ./config/HyprlandRoot ~/HyprlandRoot
+        sudo rm -rf /usr/local/bin/HyprlandRoot
+        sudo cp -r ./config/HyprlandRoot /usr/local/bin/HyprlandRoot
         sleep 1
         echo "copied"
 
@@ -117,8 +128,8 @@ case "$COPY" in
 
         case "$AUTOSTART" in
             y|yes|"")
-                echo "starting swww..."
-                swww-daemon &
+                echo "killing waybar..."
+                pkill waybar
                 echo "starting waybar..."
                 waybar &
             ;;
@@ -134,12 +145,13 @@ case "$COPY" in
             ;;
         esac
 
-        echo "finished, would you like to reboot? (y/n)"
-        read RESTART
-        case "$RESTART" in
-            y|yes|"")
-                sudo reboot
-            ;;
-        esac
+        if (whiptail --yesno "Do you want to launch swww-daemon? (wallpaper engine daemon required by the gixtuh's dotfiles)" 20 60) then
+            swww-daemon &
+        fi
+        if (whiptail --yesno "Do you want to reboot?" 20 60) then
+            sudo reboot
+        fi
+        clear
+        echo "Finished!"
     ;;
 esac
