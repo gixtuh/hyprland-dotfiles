@@ -48,7 +48,7 @@ echo "copying dotfiles in 4"; sleep 1; clear
 echo "copying dotfiles in 3"; sleep 1; clear
 echo "copying dotfiles in 2"; sleep 1; clear
 echo "copying dotfiles in 1"; sleep 1; clear
-echo "copying dotfiles in 0"
+clear
 
 case "$COPY" in
     y|yes|"")
@@ -68,7 +68,7 @@ case "$COPY" in
                 case "$YAY" in
                     y|yes|"")
                         echo "stage 3: installing yay dependencies..."
-                        yay -S google-chrome --noconfirm
+                        yay -S google-chrome --noconfirm > /dev/null
                     ;;
                 esac
             ;;
@@ -118,10 +118,12 @@ case "$COPY" in
 
         case "$AUTOSTART" in
             y|yes|"")
+                clear
                 echo "killing waybar..."
                 pkill waybar
                 echo "starting waybar..."
                 waybar &
+                sleep 2
             ;;
         esac
 
