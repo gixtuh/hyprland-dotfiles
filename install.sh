@@ -52,9 +52,10 @@ echo "copying dotfiles in 0"
 
 case "$COPY" in
     y|yes|"")
+        echo "stage 1: updating system..."
         case "$UPDATE" in
             y|yes|"")
-                sudo pacman -Syu --noconfirm
+                sudo pacman -Syu --noconfirm > /dev/null
             ;;
         esac
 
@@ -62,42 +63,37 @@ case "$COPY" in
 
         case "$DEPENDENCIES" in
             y|yes|"")
-                sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv
+                echo "stage 2: installing pacman dependencies..."
+                sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv > /dev/null
                 case "$YAY" in
                     y|yes|"")
+                        echo "stage 3: installing yay dependencies..."
                         yay -S google-chrome --noconfirm
                     ;;
                 esac
             ;;
         esac
 
-        echo "copying hyprland dotfiles..."
+        clear
+
+        echo "stage 4: copying dotfiles..."
         rm -rf ~/.config/hypr
         cp -r ./config/hypr ~/.config/hypr
         sleep 1
-        echo "copied"
 
-        echo "copying waybar dotfiles..."
         rm -rf ~/.config/waybar
         cp -r ./config/waybar ~/.config/waybar
         sudo chmod +x ~/.config/waybar/wifi_ssid.sh
         sleep 1
-        echo "copied"
 
-        echo "copying cava dotfiles..."
         rm -rf ~/.config/cava
         cp -r ./config/cava ~/.config/cava
         sleep 1
-        echo "copied"
 
-        echo "copying fastfetch dotfiles..."
         rm -rf ~/.config/fastfetch
         cp -r ./config/fastfetch ~/.config/fastfetch
         sleep 1
-        echo "copied"
 
-        echo "this process requires sudo!"
-        echo "copying user files"
         sudo rm -rf /usr/local/bin/wallpaper.sh # for some reason we need sudo
         sudo rm -rf /usr/local/bin/pipes.sh # sudo
         sudo cp -r ./config/pipes.sh /usr/local/bin/pipes.sh # sudo
@@ -107,22 +103,18 @@ case "$COPY" in
         sudo rm -rf /usr/local/bin/HyprlandRoot
         sudo cp -r ./config/HyprlandRoot /usr/local/bin/HyprlandRoot
         sleep 1
-        echo "copied"
 
-        echo "copying pywal css colors..."
         mkdir ~/.cache/wal
         cp -r ./config/colors-waybar.css ~/.cache/wal/colors-waybar.css
         sleep 1
-        echo "copied"
 
-        echo "copying bash line editor..."
         sudo rm -rf ~/.local/share/blesh/ble-0.4.0-devel3
         sudo cp -r ./config/blesh ~/.local/share/blesh/ble-0.4.0-devel3
-        echo "copied"
-
-        echo "reloading hyprland..."
-        hyprctl reload
         sleep 1
+        
+        hyprctl reload
+        echo "waiting 3 seconds for hyprland to reload..."
+        sleep 3
 
         case "$AUTOSTART" in
             y|yes|"")
@@ -135,11 +127,10 @@ case "$COPY" in
 
         case "$BASHRC" in
             y|yes|"")
-                echo "copying bashrc..."
+                echo "stage 5: copying bashrc files..."
                 rm -rf ~/.bashrc
                 cp -r ./config/bashrc ~/.bashrc
                 sleep 1
-                echo "copied"
             ;;
         esac
 
