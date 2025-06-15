@@ -6,7 +6,7 @@
 
 Enter these commands to install gixtuh dotfiles:
 ```bash
-git clone https://www.github.com/gixtuh/hyprland-dotfiles
+git clone https://github.com/gixtuh/hyprland-dotfiles
 cd hyprland-dotfiles
 ./install.sh
 ```
