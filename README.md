@@ -1,7 +1,5 @@
 # Hyprland Dotfiles v1.1
 
-**These dotfiles are still uploading so expect bugs.**
-
 ## Installing tutorial
 
 Enter these commands to install gixtuh dotfiles:
