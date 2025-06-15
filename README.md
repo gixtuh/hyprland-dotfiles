@@ -42,7 +42,7 @@ Super+F2 to increase volume
 
 F11 to put anything on fullscreen
 
-Super+Escape to open the Xfce4 System Monitor
+Super+Escape to open the system monitor
 
 Print to print screen
 
