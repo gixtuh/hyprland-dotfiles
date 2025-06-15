@@ -18,6 +18,8 @@ Only Arch Linux is supported. ![Screenshot](https://github.com/user-attachments/
 Dependencies will be self-installed except `yay`, so make sure you have `yay` installed!
 You'll be asked several questions such as if you want to update the system, and install dependencies if you're not sure that you did install them, then after installation, you get asked to reboot.
 
+# Keybind tutorial
+
 Super+Q for kitty
 
 Super+W for wallpaper selection
