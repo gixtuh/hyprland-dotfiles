@@ -8,27 +8,27 @@
 #  /_____/          \/                 \/       \/                               \/     \/ 
 
 clear
-echo -e "gixtuh's hyprland dotfiles install wizard :P\n----------------------------------------------"
+echo -e "gixtuh's hyprland dotfiles install wizard\n----------------------------------------------"
 echo "update system? (y/n)"
 read UPDATE
 clear
-echo -e "gixtuh's hyprland dotfiles install wizard :P\n----------------------------------------------"
-echo "install dependencies? (cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor) (y/n)"
+echo -e "gixtuh's hyprland dotfiles install wizard\n----------------------------------------------"
+echo "install dependencies? (cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv) (y/n)"
 read DEPENDENCIES
 clear
-echo -e "gixtuh's hyprland dotfiles install wizard :P\n----------------------------------------------"
-echo "install yay dependencies? (google-chome-stable) (y/n)"
+echo -e "gixtuh's hyprland dotfiles install wizard\n----------------------------------------------"
+echo "install yay dependencies? (google-chrome) (y/n)"
 read YAY
 clear
-echo -e "gixtuh's hyprland dotfiles install wizard :P\n----------------------------------------------"
+echo -e "gixtuh's hyprland dotfiles install wizard\n----------------------------------------------"
 echo "copy dotfiles? (y/n)"
 read COPY
 clear
-echo -e "gixtuh's hyprland dotfiles install wizard :P\n----------------------------------------------"
+echo -e "gixtuh's hyprland dotfiles install wizard\n----------------------------------------------"
 echo "replace bashrc? (y/n)"
 read BASHRC
 clear
-echo -e "gixtuh's hyprland dotfiles install wizard :P\n----------------------------------------------"
+echo -e "gixtuh's hyprland dotfiles install wizard\n----------------------------------------------"
 echo "autostart waybar and swww? (y/n)"
 read AUTOSTART
 clear
@@ -43,7 +43,7 @@ clear
 
 case "$DEPENDENCIES" in
     y|yes|"")
-        sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor
+        sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv
         case "$YAY" in
             y|yes|"")
                 yay -S google-chrome
