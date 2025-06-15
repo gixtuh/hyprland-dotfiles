@@ -13,7 +13,7 @@ echo "update system? (y/n)"
 read UPDATE
 clear
 echo -e "gixtuh's hyprland dotfiles install wizard :P\n----------------------------------------------"
-echo "install dependencies? (cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer xfce4-taskmanager) (y/n)"
+echo "install dependencies? (cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor) (y/n)"
 read DEPENDENCIES
 clear
 echo -e "gixtuh's hyprland dotfiles install wizard :P\n----------------------------------------------"
@@ -43,7 +43,7 @@ clear
 
 case "$DEPENDENCIES" in
     y|yes|"")
-        sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer xfce4-taskmanager
+        sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor
         case "$YAY" in
             y|yes|"")
                 yay -S google-chrome

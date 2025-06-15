@@ -81,4 +81,4 @@ dolphin for the file explorer
 
 pamixer for the volume changer
 
-xfce4-taskmanager for the graphical task manager.
+plasma-systemmonitor for the graphical task manager.
