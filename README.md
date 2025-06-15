@@ -1,4 +1,4 @@
-# Hyprland Dotfiles v1.0
+# Hyprland Dotfiles v1.1
 
 **These dotfiles are still uploading so expect bugs.**
 
@@ -83,3 +83,7 @@ dolphin for the file explorer
 pamixer for the volume changer
 
 plasma-systemmonitor for the graphical task manager.
+
+## Upcoming updates
+
+v1.1 - Add pywal colors to cava (done)

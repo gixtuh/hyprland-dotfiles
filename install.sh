@@ -15,7 +15,7 @@ if (whiptail --yesno "Do you want to update the system?" --title "gixtuh's hyprl
 else
     UPDATE=n
 fi
-if (whiptail --yesno "Do you want to install the dependencies? (cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv)" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
+if (whiptail --yesno "Do you want to install the dependencies? (cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv python)" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
     DEPENDENCIES=y
 else
     DEPENDENCIES=n
@@ -63,7 +63,7 @@ case "$COPY" in
         case "$DEPENDENCIES" in
             y|yes|"")
                 echo "stage 2: installing pacman dependencies..."
-                sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv > /dev/null
+                sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv python > /dev/null
                 case "$YAY" in
                     y|yes|"")
                         clear
@@ -102,6 +102,7 @@ case "$COPY" in
         rm -rf ~/HyprlandRoot
         sudo rm -rf /usr/local/bin/HyprlandRoot
         sudo cp -r ./config/HyprlandRoot /usr/local/bin/HyprlandRoot
+        sudo cp -r ./config/wal_cava /usr/local/bin/wal_cava
         sleep 1
 
         mkdir ~/.cache/wal
