@@ -92,7 +92,8 @@ case "$COPY" in
         sudo rm -rf /usr/local/bin/wallpaper.sh # for some reason we need sudo
         sudo rm -rf /usr/local/bin/pipes.sh # sudo
         sudo cp -r ./config/pipes.sh /usr/local/bin/pipes.sh # sudo
-        sudo cp -r ./config/wallpaper.sh /usr/local/bin/wallpaper.sh # the same thing
+        sudo chmod +x /usr/local/bin/pipes.sh # sudo 
+        sudo cp -r ./config/wallpaper.sh /usr/local/bin/wallpaper.sh # GOD IT'S ALL SUDO
         rm -rf ~/HyprlandRoot
         cp -r ./config/HyprlandRoot ~/HyprlandRoot
         sleep 1
