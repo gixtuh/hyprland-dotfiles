@@ -1,4 +1,4 @@
-# Hyprland Dotfiles v1.1
+# Hyprland Dotfiles v1.2
 
 ## Installing tutorial
 
@@ -12,13 +12,15 @@ If you are experiencing problems, please create an issue.
 
 ## Screenshots
 
-![Screenshot](https://github.com/user-attachments/assets/20be3df6-0512-46d0-9960-cf5ccde22978)
+![Screenshot](/assets/wallpaper.png)
 
-![Screenshot](https://github.com/user-attachments/assets/91b5fb00-2a39-40cd-93a6-cc9e5beaba0d)
+![Screenshot](/assets/red.png)
 
-![Screenshot](https://github.com/user-attachments/assets/9e8dd747-5d1d-4dee-905e-885a80bd6af7)
+![Screenshot](/assets/purple.png)
 
-![Screenshot](https://github.com/user-attachments/assets/f8bcb505-1f4e-40b4-a75b-1fc9655f4312)
+![Screenshot](/assets/green.png)
+
+![Screenshot](/assets/kde.png)
 
 Only Arch Linux is supported. ![Screenshot](https://github.com/user-attachments/assets/05aeac22-145c-49d1-a03b-0ac6dd6b6f6e)
 
@@ -86,3 +88,5 @@ plasma-systemmonitor for the graphical task manager.
 ## Upcoming updates
 
 v1.1 - Add pywal colors to cava (done)
+
+v1.2 - Add more wallpapers and tweak cava (done)
