@@ -43,15 +43,14 @@ fi
 
 clear
 
-echo "copying dotfiles in 5"; sleep 1; clear
-echo "copying dotfiles in 4"; sleep 1; clear
-echo "copying dotfiles in 3"; sleep 1; clear
-echo "copying dotfiles in 2"; sleep 1; clear
-echo "copying dotfiles in 1"; sleep 1; clear
-clear
-
 case "$COPY" in
     y|yes|"")
+        echo "copying dotfiles in 5"; sleep 1; clear
+        echo "copying dotfiles in 4"; sleep 1; clear
+        echo "copying dotfiles in 3"; sleep 1; clear
+        echo "copying dotfiles in 2"; sleep 1; clear
+        echo "copying dotfiles in 1"; sleep 1; clear
+        clear
         echo "stage 1: updating system..."
         case "$UPDATE" in
             y|yes|"")
