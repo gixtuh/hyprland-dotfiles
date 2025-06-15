@@ -43,6 +43,13 @@ fi
 
 clear
 
+echo "copying dotfiles in 5"; sleep 1; clear
+echo "copying dotfiles in 4"; sleep 1; clear
+echo "copying dotfiles in 3"; sleep 1; clear
+echo "copying dotfiles in 2"; sleep 1; clear
+echo "copying dotfiles in 1"; sleep 1; clear
+echo "copying dotfiles in 0"
+
 case "$COPY" in
     y|yes|"")
         case "$UPDATE" in
@@ -63,15 +70,6 @@ case "$COPY" in
                 esac
             ;;
         esac
-
-        clear
-
-        echo "copying dotfiles in 5"; sleep 1; clear
-        echo "copying dotfiles in 4"; sleep 1; clear
-        echo "copying dotfiles in 3"; sleep 1; clear
-        echo "copying dotfiles in 2"; sleep 1; clear
-        echo "copying dotfiles in 1"; sleep 1; clear
-        echo "copying dotfiles in 0"
 
         echo "copying hyprland dotfiles..."
         rm -rf ~/.config/hypr
