@@ -1,4 +1,4 @@
-# Hyprland Dotfiles v1.2
+# Hyprland Dotfiles v1.3
 
 ## Installing tutorial
 
@@ -19,8 +19,6 @@ If you are experiencing problems, please create an issue.
 ![Screenshot](/assets/purple.png)
 
 ![Screenshot](/assets/green.png)
-
-![Screenshot](/assets/kde.png)
 
 Only Arch Linux is supported. ![Screenshot](https://github.com/user-attachments/assets/05aeac22-145c-49d1-a03b-0ac6dd6b6f6e)
 
@@ -90,3 +88,5 @@ plasma-systemmonitor for the graphical task manager.
 v1.1 - Add pywal colors to cava (done)
 
 v1.2 - Add more wallpapers and tweak cava (done)
+
+v1.3 - cava has more bars, less spacing and bars are smaller
