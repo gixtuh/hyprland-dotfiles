@@ -15,12 +15,16 @@ BASHRC=n
 AUTOSTART=n
 SKIP=n
 INSTANT=n
-ch1=$(whiptail --checklist "gixtuh's hyprland dotfile installation wizard" 20 60 7 \
+SWWW=n
+REBOOT=n
+ch1=$(whiptail --checklist "gixtuh's hyprland dotfile installation wizard" 20 60 9 \
     "Update system" "" OFF \
     "Install dependencies" "" OFF \
     "Install yay dependencies" "" OFF \
     "Replace .bashrc" "" OFF \
     "Restart waybar after installation" "" OFF \
+    "Restart swww after installation" "" OFF \
+    "Reboot after installation" "" OFF \
     "Skip timer" "" OFF \
     "Instant copy" "" OFF \
 3>&1 1>&2 2>&3)
@@ -34,6 +38,8 @@ for choice in "${choices[@]}"; do
     [[ $choice == "Restart waybar after installation" ]] && AUTOSTART=y
     [[ $choice == "Skip timer" ]] && SKIP=y
     [[ $choice == "Instant copy" ]] && INSTANT=y
+    [[ $choice == "Restart swww after installation" ]] && SWWW=y
+    [[ $choice == "Reboot after installation" ]] && REBOOT=y
     
 done
 
@@ -145,10 +151,12 @@ case "$COPY" in
             ;;
         esac
 
-        if (whiptail --yesno "Do you want to launch swww-daemon? (wallpaper engine daemon required by the gixtuh's dotfiles)" 20 60) then
+        if [ $SWWW = y ]; then
+            pkill swww-daemon
             swww-daemon &
+            swww img /usr/local/bin/HyprlandRoot/wallpapers/default/wallpaper.jpg
         fi
-        if (whiptail --yesno "Do you want to reboot?" 20 60) then
+        if [ $REBOOT = y ]; then
             sudo reboot
         fi
         clear
