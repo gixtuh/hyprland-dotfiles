@@ -1,4 +1,4 @@
-wallpaper=$(echo -e "default/wallpaper.jpg\ndefault/red.jpg\ndefault/purple.jpg\ndefault/green.jpg" | rofi -dmenu -p "Select wallpaper")
+wallpaper=$(echo -e "default/wallpaper.jpg\ndefault/red.jpg\ndefault/purple.jpg\ndefault/green.jpg\ndefault/black.jpg" | rofi -dmenu -p "Select wallpaper")
 case $wallpaper in
  "")
   echo "none selected; skipping"

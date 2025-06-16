@@ -1,4 +1,4 @@
-# Hyprland Dotfiles v1.3
+# Hyprland Dotfiles v1.4
 
 ## Installing tutorial
 
@@ -83,10 +83,12 @@ pamixer for the volume changer
 
 plasma-systemmonitor for the graphical task manager.
 
-## Upcoming updates
+## Changelog
 
-v1.1 - Add pywal colors to cava (done)
+v1.1 - Add pywal colors to cava
 
-v1.2 - Add more wallpapers and tweak cava (done)
+v1.2 - Add more wallpapers and tweak cava
 
 v1.3 - cava has more bars, less spacing and bars are smaller
+
+v1.4 - Added default/black.jpg wallpaper.
