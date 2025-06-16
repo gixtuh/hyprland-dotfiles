@@ -8,33 +8,36 @@
 #  /_____/          \/                 \/       \/                               \/     \/ 
 
 
+UPDATE=n
+DEPENDENCIES=n
+YAY=n
+BASHRC=n
+AUTOSTART=n
+SKIP=n
+INSTANT=n
+ch1=$(whiptail --checklist "gixtuh's hyprland dotfile installation wizard" 20 60 7 \
+    "Update system" "" OFF \
+    "Install dependencies" "" OFF \
+    "Install yay dependencies" "" OFF \
+    "Replace .bashrc" "" OFF \
+    "Restart waybar after installation" "" OFF \
+    "Skip timer" "" OFF \
+    "Instant copy" "" OFF \
+3>&1 1>&2 2>&3)
+eval "choices=($ch1)"
+for choice in "${choices[@]}"; do
+
+    [[ $choice == "Update system" ]] && UPDATE=y
+    [[ $choice == "Install dependencies" ]] && DEPENDENCIES=y
+    [[ $choice == "Install yay dependencies" ]] && YAY=y
+    [[ $choice == "Replace .bashrc" ]] && BASHRC=y
+    [[ $choice == "Restart waybar after installation" ]] && AUTOSTART=y
+    [[ $choice == "Skip timer" ]] && SKIP=y
+    [[ $choice == "Instant copy" ]] && INSTANT=y
+    
+done
 
 
-if (whiptail --yesno "Do you want to update the system?" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
-    UPDATE=y
-else
-    UPDATE=n
-fi
-if (whiptail --yesno "Do you want to install the dependencies? (cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv python)" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
-    DEPENDENCIES=y
-else
-    DEPENDENCIES=n
-fi
-if (whiptail --yesno "Do you want to install the yay dependencies? (google-chrome)" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
-    YAY=y
-else
-    YAY=n
-fi
-if (whiptail --yesno "Do you want to replace the .bashrc file?" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
-    BASHRC=y
-else
-    BASHRC=n
-fi
-if (whiptail --yesno "Do you want to restart waybar after installation?" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
-    AUTOSTART=y
-else
-    AUTOSTART=n
-fi
 if (whiptail --yesno "Are you sure you want to install gixtuh's Hyprland dotfiles? It will overwrite your current Hyprland, fastfetch, cava and waybar configs!" --title "gixtuh's hyprland dotfile install wizard" 20 60) then
     COPY=y
 else
@@ -45,11 +48,14 @@ clear
 
 case "$COPY" in
     y|yes|"")
-        echo "copying dotfiles in 5"; sleep 1; clear
-        echo "copying dotfiles in 4"; sleep 1; clear
-        echo "copying dotfiles in 3"; sleep 1; clear
-        echo "copying dotfiles in 2"; sleep 1; clear
-        echo "copying dotfiles in 1"; sleep 1; clear
+
+        if [ $SKIP = n ]; then
+            echo "copying dotfiles in 5"; sleep 1; clear
+            echo "copying dotfiles in 4"; sleep 1; clear
+            echo "copying dotfiles in 3"; sleep 1; clear
+            echo "copying dotfiles in 2"; sleep 1; clear
+            echo "copying dotfiles in 1"; sleep 1; clear
+        fi
         clear
         echo "stage 1: updating system..."
         case "$UPDATE" in
@@ -79,20 +85,20 @@ case "$COPY" in
         echo "stage 4: copying dotfiles..."
         rm -rf ~/.config/hypr
         cp -r ./config/hypr ~/.config/hypr
-        sleep 1
+        if [ $INSTANT = n ]; then sleep 1; fi
 
         rm -rf ~/.config/waybar
         cp -r ./config/waybar ~/.config/waybar
         sudo chmod +x ~/.config/waybar/wifi_ssid.sh
-        sleep 1
+        if [ $INSTANT = n ]; then sleep 1; fi
 
         rm -rf ~/.config/cava
         cp -r ./config/cava ~/.config/cava
-        sleep 1
+        if [ $INSTANT = n ]; then sleep 1; fi
 
         rm -rf ~/.config/fastfetch
         cp -r ./config/fastfetch ~/.config/fastfetch
-        sleep 1
+        if [ $INSTANT = n ]; then sleep 1; fi
 
         sudo rm -rf /usr/local/bin/wallpaper.sh # for some reason we need sudo
         sudo rm -rf /usr/local/bin/pipes.sh # sudo
@@ -103,19 +109,19 @@ case "$COPY" in
         sudo rm -rf /usr/local/bin/HyprlandRoot
         sudo cp -r ./config/HyprlandRoot /usr/local/bin/HyprlandRoot
         sudo cp -r ./config/wal_cava /usr/local/bin/wal_cava
-        sleep 1
+        if [ $INSTANT = n ]; then sleep 1; fi
 
         mkdir ~/.cache/wal
         cp -r ./config/colors-waybar.css ~/.cache/wal/colors-waybar.css
-        sleep 1
+        if [ $INSTANT = n ]; then sleep 1; fi
 
         sudo rm -rf ~/.local/share/blesh/ble-0.4.0-devel3
         sudo cp -r ./config/blesh ~/.local/share/blesh/ble-0.4.0-devel3
-        sleep 1
+        if [ $INSTANT = n ]; then sleep 1; fi
         
         hyprctl reload
         echo "waiting 3 seconds for hyprland to reload..."
-        sleep 3
+        if [ $INSTANT = n ]; then sleep 3; fi
 
         case "$AUTOSTART" in
             y|yes|"")
@@ -124,7 +130,7 @@ case "$COPY" in
                 pkill waybar
                 echo "starting waybar..."
                 waybar &
-                sleep 2
+                if [ $INSTANT = n ]; then sleep 2; fi
             ;;
         esac
 
@@ -135,7 +141,7 @@ case "$COPY" in
                 echo "stage 5: copying bashrc files..."
                 rm -rf ~/.bashrc
                 cp -r ./config/bashrc ~/.bashrc
-                sleep 1
+                if [ $INSTANT = n ]; then sleep 1; fi
             ;;
         esac
 
