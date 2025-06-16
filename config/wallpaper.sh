@@ -5,9 +5,8 @@ case $wallpaper in
  ;;
  *)
    swww img /usr/local/bin/HyprlandRoot/wallpapers/$wallpaper \
-  --transition-type grow \
-  --transition-duration 1 \
-  --transition-pos "$(awk 'BEGIN { srand(); printf "%.2f,%.2f\n", rand(), rand() }')"
+  --transition-type any \
+  --transition-duration 1 
   wal -i /usr/local/bin/HyprlandRoot/wallpapers/$wallpaper -nst
   wal_cava -c ~/.config/cava/config -G 3 -i ~/.cache/wal/colors.json
   cat ~/.cache/wal/colors.css 
