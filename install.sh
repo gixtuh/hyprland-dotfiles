@@ -118,6 +118,7 @@ case "$COPY" in
         if [ $INSTANT = n ]; then sleep 1; fi
 
         mkdir ~/.cache/wal
+        mkdir ~/.local/share/blesh/ble-0.4.0-devel3
         cp -r ./config/colors-waybar.css ~/.cache/wal/colors-waybar.css
         if [ $INSTANT = n ]; then sleep 1; fi
 
