@@ -75,7 +75,7 @@ case "$COPY" in
         case "$DEPENDENCIES" in
             y|yes|"")
                 echo "stage 2: installing pacman dependencies..."
-                sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv python > /dev/null
+                sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww python-pywal btop dolphin pamixer plasma-systemmonitor mpv python swaync libnotify > /dev/null
                 case "$YAY" in
                     y|yes|"")
                         clear

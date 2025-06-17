@@ -83,6 +83,8 @@ pamixer for the volume changer
 
 plasma-systemmonitor for the graphical task manager.
 
+swaync for the notification daemon
+
 ## Changelog
 
 v1.1 - Add pywal colors to cava
