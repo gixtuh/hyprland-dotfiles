@@ -9,9 +9,9 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-alias wifi="sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/home_network.conf &"
+# alias wifi="sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/home_network.conf &"
 alias neofetch="fastfetch --kitty-direct /usr/local/bin/HyprlandRoot/fastfetch.png --logo-width 15 --logo-height 7 --logo-padding 5 --logo-padding-top 3"
 alias bashrc2root="sudo cp ~/.bashrc /root/.bashrc; source ~/.bashrc"
 alias nano="code"
 neofetch
-source /home/gixtuh/.local/share/blesh/ble-0.4.0-devel3/ble.sh
+source ~/.local/share/blesh/ble-0.4.0-devel3/ble.sh
