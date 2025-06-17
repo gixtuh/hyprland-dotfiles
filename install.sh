@@ -111,6 +111,7 @@ case "$COPY" in
         sudo cp -r ./config/pipes.sh /usr/local/bin/pipes.sh # sudo
         sudo chmod +x /usr/local/bin/pipes.sh # sudo 
         sudo cp -r ./config/wallpaper.sh /usr/local/bin/wallpaper.sh # GOD IT'S ALL SUDO
+        sudo chmod +x /usr/local/bin/wallpaper.sh
         rm -rf ~/HyprlandRoot
         sudo rm -rf /usr/local/bin/HyprlandRoot
         sudo cp -r ./config/HyprlandRoot /usr/local/bin/HyprlandRoot
