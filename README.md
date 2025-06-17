@@ -73,6 +73,8 @@ kitty for the terminal
 
 swww for the wallpaper
 
+rofi for the app launcher
+
 python-pywal for the color scheme generator
 
 btop for the CLI task manager
