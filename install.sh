@@ -120,6 +120,8 @@ case "$COPY" in
         mkdir ~/.cache/wal
         mkdir ~/.local/share/blesh/ble-0.4.0-devel3
         cp -r ./config/colors-waybar.css ~/.cache/wal/colors-waybar.css
+        ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-wal.css
+
         if [ $INSTANT = n ]; then sleep 1; fi
 
         sudo rm -rf ~/.local/share/blesh/ble-0.4.0-devel3
