@@ -75,7 +75,7 @@ case "$COPY" in
         case "$DEPENDENCIES" in
             y|yes|"")
                 echo "stage 2: installing pacman dependencies..."
-                if ( ! sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww rofi python-pywal btop dolphin pamixer plasma-systemmonitor mpv python swaync libnotify > /dev/null); then
+                if ( ! sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww rofi python-pywal btop dolphin pamixer plasma-systemmonitor mpv python swaync libnotify code > /dev/null); then
                     whiptail --msgbox "Failure installing dependencies. Make sure you're on Arch Linux!" 20 60
                     exit
                 fi
