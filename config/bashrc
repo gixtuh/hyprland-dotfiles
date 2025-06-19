@@ -7,7 +7,7 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1='[\u@\h \W]\$ '
+PS1='\n \[\e[38;5;46m\]\u\[\e[0m\], \T\n\[\e[38;5;196m\]\w\[\e[0m\]>>'
 
 # alias wifi="sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/home_network.conf &"
 alias neofetch="fastfetch --kitty-direct /usr/local/bin/HyprlandRoot/fastfetch.png --logo-width 15 --logo-height 7 --logo-padding 5 --logo-padding-top 3"
