@@ -1,0 +1,30 @@
+{
+    "label" : "lock",
+    "action" : "hyprlock",
+    "text" : "Lock",
+    "keybind" : "l"
+}
+{
+    "label" : "logout",
+    "action" : "pkill Hyprland",
+    "text" : "Logout",
+    "keybind" : "e"
+}
+{
+    "label" : "shutdown",
+    "action" : "sudo shutdown now",
+    "text" : "Shutdown",
+    "keybind" : "s"
+}
+{
+    "label" : "suspend",
+    "action" : "systemctl sleep",
+    "text" : "Sleep",
+    "keybind" : "u"
+}
+{
+    "label" : "reboot",
+    "action" : "sudo reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}

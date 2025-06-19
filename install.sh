@@ -75,12 +75,18 @@ case "$COPY" in
         case "$DEPENDENCIES" in
             y|yes|"")
                 echo "stage 2: installing pacman dependencies..."
-                sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww rofi python-pywal btop dolphin pamixer plasma-systemmonitor mpv python swaync libnotify > /dev/null
+                if ( ! sudo pacman -S --noconfirm cava fastfetch waybar hyprland hyprlock kitty swww rofi python-pywal btop dolphin pamixer plasma-systemmonitor mpv python swaync libnotify > /dev/null); then
+                    whiptail --msgbox "Failure installing dependencies. Make sure you're on Arch Linux!" 20 60
+                    exit
+                fi
                 case "$YAY" in
                     y|yes|"")
                         clear
                         echo "stage 3: installing yay dependencies..."
-                        yay -S google-chrome --noconfirm > /dev/null
+                        if ( ! yay -S google-chrome wlogout --noconfirm > /dev/null ); then
+                            whiptail --msgbox "Failure installing yay dependencies. Make sure you have yay installed and it is not corrupted!" 20 60
+                            exit
+                        fi
                     ;;
                 esac
             ;;
@@ -106,6 +112,10 @@ case "$COPY" in
         cp -r ./config/fastfetch ~/.config/fastfetch
         if [ $INSTANT = n ]; then sleep 1; fi
 
+        sudo rm -rf /etc/wlogout
+        sudo cp -r ./config/wlogout /etc/wlogout
+        if [ $INSTANT = n ]; then sleep 1; fi
+
         sudo rm -rf /usr/local/bin/wallpaper.sh # for some reason we need sudo
         sudo rm -rf /usr/local/bin/pipes.sh # sudo
         sudo cp -r ./config/pipes.sh /usr/local/bin/pipes.sh # sudo
@@ -126,6 +136,7 @@ case "$COPY" in
         if [ $INSTANT = n ]; then sleep 1; fi
 
         sudo rm -rf ~/.local/share/blesh/ble-0.4.0-devel3
+	sudo mkdir ~/.local/share/blesh
         sudo cp -r ./config/blesh ~/.local/share/blesh/ble-0.4.0-devel3
         if [ $INSTANT = n ]; then sleep 1; fi
         

@@ -1,4 +1,4 @@
-# Hyprland Dotfiles v1.4
+# Hyprland Dotfiles v1.5
 
 ## Installing tutorial
 
@@ -87,6 +87,8 @@ plasma-systemmonitor for the graphical task manager.
 
 swaync for the notification daemon
 
+wlogout for the logout menu
+
 ## Changelog
 
 v1.1 - Add pywal colors to cava
@@ -96,3 +98,5 @@ v1.2 - Add more wallpapers and tweak cava
 v1.3 - cava has more bars, less spacing and bars are smaller
 
 v1.4 - Added default/black.jpg wallpaper.
+
+v1.5 - Tweak hyprland.conf, add wlogout and add some error handling in install.sh
