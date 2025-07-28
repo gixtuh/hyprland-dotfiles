@@ -228,9 +228,9 @@ bar_spacing = 0
 # background must also be defined in hex or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
 gradient = 1 
-gradient_color_1 = "#a38e89"
-gradient_color_2 = "#eaccc4"
-gradient_color_3 = "#AABEBC"
+gradient_color_1 = "#9aa385"
+gradient_color_2 = "#ddeabf"
+gradient_color_3 = "#C8E690"
 gradient_count = 3
 
 

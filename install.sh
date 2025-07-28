@@ -26,7 +26,7 @@ ch1=$(whiptail --checklist "gixtuh's hyprland dotfile installation wizard" 20 60
     "Restart swww after installation" "" OFF \
     "Reboot after installation" "" OFF \
     "Skip timer" "" OFF \
-    "Instant copy" "" OFF \
+    "Quick copy" "" OFF \
 3>&1 1>&2 2>&3)
 eval "choices=($ch1)"
 for choice in "${choices[@]}"; do
@@ -37,7 +37,7 @@ for choice in "${choices[@]}"; do
     [[ $choice == "Replace .bashrc" ]] && BASHRC=y
     [[ $choice == "Restart waybar after installation" ]] && AUTOSTART=y
     [[ $choice == "Skip timer" ]] && SKIP=y
-    [[ $choice == "Instant copy" ]] && INSTANT=y
+    [[ $choice == "Quick copy" ]] && INSTANT=y
     [[ $choice == "Restart swww after installation" ]] && SWWW=y
     [[ $choice == "Reboot after installation" ]] && REBOOT=y
     

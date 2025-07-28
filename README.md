@@ -1,6 +1,6 @@
-# Hyprland Dotfiles v1.5
+# Hyprland Dotfiles v1.6
 
-## Installing tutorial
+## Installation tutorial
 
 Enter these commands to install gixtuh dotfiles:
 ```bash
@@ -24,8 +24,8 @@ Only Arch Linux is supported. ![Screenshot](https://github.com/user-attachments/
 
 
 
-Dependencies will be self-installed except `yay`, so make sure you have `yay` installed!
-You'll be asked several questions such as if you want to update the system, and install dependencies if you're not sure that you did install them, then after installation, you get asked to reboot.
+Dependencies will be self-installed.
+You'll be shown a checklist where you check installation options such as dependency installation, rebooting, and quick mode.
 
 # Keybind tutorial
 
@@ -100,3 +100,5 @@ v1.3 - cava has more bars, less spacing and bars are smaller
 v1.4 - Added default/black.jpg wallpaper.
 
 v1.5 - Tweak hyprland.conf, add wlogout and add some error handling in install.sh
+
+v1.6 - Tweaked animations because I didn't like it (yes i'm back)
